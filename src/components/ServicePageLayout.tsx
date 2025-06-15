@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { ArrowLeft, Check } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Navigation from './Navigation';
 import Footer from './Footer';
 import FloatingWhatsApp from './FloatingWhatsApp';
@@ -29,6 +29,16 @@ const ServicePageLayout: React.FC<ServicePageLayoutProps> = ({
   ctaText,
   children
 }) => {
+  const navigate = useNavigate();
+
+  const handleBackClick = () => {
+    navigate('/#services');
+  };
+
+  const handleCTAClick = () => {
+    navigate('/#contact');
+  };
+
   return (
     <div className="min-h-screen bg-white font-satoshi">
       <Navigation />
@@ -36,13 +46,13 @@ const ServicePageLayout: React.FC<ServicePageLayoutProps> = ({
       {/* Breadcrumb */}
       <div className="bg-gray-50 py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Link 
-            to="/#services" 
+          <button 
+            onClick={handleBackClick}
             className="inline-flex items-center text-primary hover:text-primary/80 transition-colors font-satoshi"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Services
-          </Link>
+          </button>
         </div>
       </div>
 
@@ -103,12 +113,12 @@ const ServicePageLayout: React.FC<ServicePageLayoutProps> = ({
           <p className="text-xl text-white/90 font-satoshi mb-8">
             Let's discuss how we can help you achieve your goals with {title.toLowerCase()}.
           </p>
-          <a
-            href="#contact"
+          <button
+            onClick={handleCTAClick}
             className="bg-white text-primary px-8 py-4 rounded-full font-satoshi font-semibold hover:bg-gray-100 transition-colors inline-block text-lg"
           >
             {ctaText}
-          </a>
+          </button>
         </div>
       </section>
 
