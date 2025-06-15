@@ -9,6 +9,7 @@ import {
   Code, 
   BarChart3 
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Services = () => {
   const services = [
@@ -16,49 +17,57 @@ const Services = () => {
       icon: Target,
       title: "Digital Marketing",
       description: "Comprehensive digital strategies that drive traffic, engagement, and conversions across all channels.",
-      features: ["Multi-channel campaigns", "Performance tracking", "ROI optimization"]
+      features: ["Multi-channel campaigns", "Performance tracking", "ROI optimization"],
+      link: "/services/digital-marketing"
     },
     {
       icon: Search,
       title: "Google Ads Manager",
       description: "Expert Google Ads management that maximizes your ad spend and delivers qualified leads.",
-      features: ["Campaign optimization", "Keyword research", "A/B testing"]
+      features: ["Campaign optimization", "Keyword research", "A/B testing"],
+      link: "/services/google-ads-manager"
     },
     {
       icon: PenTool,
       title: "SEO Content Writing",
       description: "High-quality, SEO-optimized content that ranks high and converts visitors into customers.",
-      features: ["Keyword optimization", "Content strategy", "Technical SEO"]
+      features: ["Keyword optimization", "Content strategy", "Technical SEO"],
+      link: "/services/seo-content-writing"
     },
     {
       icon: Share2,
       title: "Social Media Marketing",
       description: "Engaging social media strategies that build communities and drive brand awareness.",
-      features: ["Content creation", "Community management", "Paid social ads"]
+      features: ["Content creation", "Community management", "Paid social ads"],
+      link: "/services/social-media-marketing"
     },
     {
       icon: TrendingUp,
       title: "Organic Growth Strategies",
       description: "Sustainable growth tactics that build long-term success without paid advertising.",
-      features: ["Growth hacking", "Viral marketing", "Referral systems"]
+      features: ["Growth hacking", "Viral marketing", "Referral systems"],
+      link: "/services/organic-growth-strategies"
     },
     {
       icon: ShoppingCart,
       title: "E-commerce Brand Management",
       description: "Complete e-commerce solutions from store setup to scaling your online business.",
-      features: ["Store optimization", "Product positioning", "Sales funnels"]
+      features: ["Store optimization", "Product positioning", "Sales funnels"],
+      link: "/services/ecommerce-brand-management"
     },
     {
       icon: Code,
       title: "Website Development",
       description: "Modern, fast-loading websites built with WordPress & Shopify for maximum conversions.",
-      features: ["Mobile-first design", "Speed optimization", "Conversion tracking"]
+      features: ["Mobile-first design", "Speed optimization", "Conversion tracking"],
+      link: "/services/website-development"
     },
     {
       icon: BarChart3,
       title: "KPI Tracking & Analytics",
       description: "Data-driven insights and comprehensive reporting to measure and improve performance.",
-      features: ["Custom dashboards", "Performance metrics", "Growth insights"]
+      features: ["Custom dashboards", "Performance metrics", "Growth insights"],
+      link: "/services/kpi-tracking-analytics"
     }
   ];
 
@@ -100,7 +109,7 @@ const Services = () => {
               </p>
 
               {/* Features */}
-              <ul className="space-y-2">
+              <ul className="space-y-2 mb-6">
                 {service.features.map((feature, idx) => (
                   <li key={idx} className="flex items-center text-sm text-gray-500 font-satoshi">
                     <div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>
@@ -109,12 +118,13 @@ const Services = () => {
                 ))}
               </ul>
 
-              {/* Hover Effect */}
-              <div className="mt-6 opacity-0 group-hover:opacity-100 transition-opacity">
-                <div className="text-primary font-satoshi font-medium text-sm cursor-pointer">
-                  Learn More →
-                </div>
-              </div>
+              {/* Learn More Link */}
+              <Link 
+                to={service.link}
+                className="text-primary font-satoshi font-medium text-sm hover:text-primary/80 transition-colors inline-flex items-center"
+              >
+                Learn More →
+              </Link>
             </div>
           ))}
         </div>
