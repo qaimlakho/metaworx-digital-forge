@@ -1,4 +1,5 @@
-
+import ontrendImg from "@/assets/portfolio/ontrend.png";
+import koreanImg from "@/assets/portfolio/korean-skin-care.png";
 import { ExternalLink, TrendingUp, DollarSign, Users } from 'lucide-react';
 
 const Portfolio = () => {
@@ -6,37 +7,40 @@ const Portfolio = () => {
     {
       title: "E-commerce Fashion Brand",
       category: "E-commerce Growth",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+      image: ontrendImg,
+      link: "https://www.instagram.com/ontrend.pk_?utm_source=ig_web_button_share_sheet&igsh=MWF4M2YxYW16M3RnZQ==",
       results: [
         { label: "Revenue Growth", value: "+340%", icon: DollarSign },
         { label: "Traffic Increase", value: "+250%", icon: TrendingUp },
         { label: "Customer Base", value: "+180%", icon: Users }
       ],
-      description: "Complete e-commerce transformation including store optimization, SEO, and paid advertising campaigns.",
-      tags: ["Google Ads", "SEO", "Shopify", "Social Media"]
+      description: "Complete e-commerce transformation including store optimization, SEO, and meta advertising campaigns.",
+      tags: ["Meta Ads", "SEO", "Organic Growth", "Social Media"]
     },
     {
-      title: "SaaS Startup Launch",
+      title: "Skincare Startup Launch",
       category: "Digital Marketing",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+      image: koreanImg,
+      link: "https://www.koreanskinscare.com",
       results: [
         { label: "Lead Generation", value: "+420%", icon: TrendingUp },
         { label: "Conversion Rate", value: "+85%", icon: DollarSign },
         { label: "Brand Awareness", value: "+300%", icon: Users }
       ],
-      description: "Full digital marketing strategy for SaaS startup from zero to market leadership position.",
-      tags: ["Content Marketing", "Google Ads", "LinkedIn Ads", "SEO"]
+      description: "Full digital marketing strategy for Skincare startup from zero to market leadership position.",
+      tags: ["Content Marketing", "Google Ads", "Social Media", "SEO"]
     },
     {
-      title: "Local Business Expansion",
-      category: "Local SEO & Marketing",
+      title: "Amazon Wholesale Business Expansion",
+      category: "Amazon PPC",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
+      link: "https://www.instagram.com/amazonfastservices.pk?igsh=bmsyeW85YTFwZ2M4",
       results: [
         { label: "Local Rankings", value: "#1 Position", icon: TrendingUp },
         { label: "Phone Calls", value: "+280%", icon: DollarSign },
         { label: "Foot Traffic", value: "+150%", icon: Users }
       ],
-      description: "Local SEO and digital marketing campaign that dominated local search results.",
+      description: "Scale your Amazon wholesale business with proven strategies, automation, and global reach.",
       tags: ["Local SEO", "Google My Business", "Facebook Ads", "Website"]
     }
   ];
@@ -47,11 +51,11 @@ const Portfolio = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold font-satoshi text-gray-900 mb-6">
-            Success <span className="text-primary">Stories</span>
+            Portfolio <span className="text-primary">Highlights</span>
           </h2>
           <p className="text-xl text-gray-600 font-satoshi max-w-3xl mx-auto">
-            See how we've helped businesses like yours achieve remarkable growth 
-            through our proven digital strategies and execution.
+            Explore how we’ve crafted powerful digital solutions for ambitious 
+            brands — from websites and online stores to high-performing ad campaigns.
           </p>
         </div>
 
@@ -67,6 +71,7 @@ const Portfolio = () => {
               {/* Image */}
               <div className="lg:w-1/2">
                 <div className="relative group overflow-hidden rounded-2xl">
+                  <a href={caseStudy.link} target="_blank" rel="noopener noreferrer">
                   <img
                     src={caseStudy.image}
                     alt={caseStudy.title}
@@ -76,6 +81,7 @@ const Portfolio = () => {
                   <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <ExternalLink className="w-6 h-6 text-white" />
                   </div>
+                  </a>
                 </div>
               </div>
 

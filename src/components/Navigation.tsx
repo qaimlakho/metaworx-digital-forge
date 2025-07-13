@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import logo from "@/assets/portfolio/logo.png";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -60,14 +61,18 @@ const Navigation = () => {
       isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-24">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link 
               to="/"
               className="text-2xl font-bold font-satoshi text-primary hover:text-primary/80 transition-colors"
             >
-              Digital Metaworx
+              <img 
+                src={logo} 
+                alt="Digital Metaworx Logo" 
+                className="h-18 max-h-20 w-auto object-contain" 
+              />
             </Link>
           </div>
 

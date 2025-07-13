@@ -1,5 +1,6 @@
 
 import { Facebook, Instagram, Linkedin, Twitter, Mail, Phone, MapPin, ArrowUp } from 'lucide-react';
+import { FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -40,10 +41,10 @@ const Footer = () => {
             
             {/* Social Links */}
             <div className="flex space-x-4">
-              <a href="#" className="bg-gray-800 hover:bg-primary p-3 rounded-full transition-colors">
+              <a href="https://www.facebook.com/share/1CGsAZ7Qrm/" className="bg-gray-800 hover:bg-primary p-3 rounded-full transition-colors">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="bg-gray-800 hover:bg-primary p-3 rounded-full transition-colors">
+              <a href="https://www.instagram.com/digitalmetaworx?utm_source=ig_web_button_share_sheet&igsh=Nmk5bzZseXRqdmNm" className="bg-gray-800 hover:bg-primary p-3 rounded-full transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
               <a href="#" className="bg-gray-800 hover:bg-primary p-3 rounded-full transition-colors">
@@ -52,6 +53,14 @@ const Footer = () => {
               <a href="#" className="bg-gray-800 hover:bg-primary p-3 rounded-full transition-colors">
                 <Twitter className="w-5 h-5" />
               </a>
+                <a
+                  href="https://wa.me/923303694739"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gray-800 hover:bg-primary p-3 rounded-full transition-colors"
+                >
+                  <FaWhatsapp className="w-5 h-5" />
+                </a>
             </div>
           </div>
 
@@ -99,15 +108,15 @@ const Footer = () => {
             <div className="space-y-4">
               <div className="flex items-center">
                 <Mail className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
-                <span className="text-gray-300 font-satoshi">hello@digitalmetaworx.com</span>
+                <span className="text-gray-300 font-satoshi">digitalmetaworx@gmail.com</span>
               </div>
               <div className="flex items-center">
                 <Phone className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
-                <span className="text-gray-300 font-satoshi">+1 (555) 123-4567</span>
+                <span className="text-gray-300 font-satoshi">+92-(330)-3694739</span>
               </div>
               <div className="flex items-center">
                 <MapPin className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
-                <span className="text-gray-300 font-satoshi">San Francisco, CA</span>
+                <span className="text-gray-300 font-satoshi">Karachi, Pakistan</span>
               </div>
             </div>
 

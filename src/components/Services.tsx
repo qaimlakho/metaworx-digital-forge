@@ -7,7 +7,7 @@ import {
   TrendingUp, 
   ShoppingCart, 
   Code, 
-  BarChart3 
+  LayoutGrid  
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -63,10 +63,10 @@ const Services = () => {
       link: "/services/website-development"
     },
     {
-      icon: BarChart3,
-      title: "KPI Tracking & Analytics",
-      description: "Data-driven insights and comprehensive reporting to measure and improve performance.",
-      features: ["Custom dashboards", "Performance metrics", "Growth insights"],
+      icon: LayoutGrid,
+      title: "Content Planning & Carousels",
+      description: "Strategic content & carousels designed to boost engagement & brand visibility.",
+      features: ["Social media content calendars", "Carousel design & copywriting", "Engagement optimization"],
       link: "/services/kpi-tracking-analytics"
     }
   ];

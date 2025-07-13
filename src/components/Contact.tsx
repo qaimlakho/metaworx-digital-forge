@@ -1,8 +1,10 @@
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
+import emailjs from "emailjs-com";
 import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
 
 const Contact = () => {
+  const formRef = useRef();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -21,12 +23,34 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you would typically send the form data to your backend
-    console.log('Form submitted:', formData);
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 3000);
+
+    emailjs
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formData,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        () => {
+          setIsSubmitted(true);
+          setFormData({
+            name: '',
+            email: '',
+            company: '',
+            phone: '',
+            service: '',
+            budget: '',
+            message: '',
+          });
+        },
+        (error) => {
+          console.error('EmailJS Error:', error);
+          alert('Something went wrong. Please try again later.');
+        }
+      );
   };
 
   const services = [
@@ -40,10 +64,10 @@ const Contact = () => {
   ];
 
   const budgetRanges = [
+    '$500 - $1,000/month',
     '$1,000 - $5,000/month',
     '$5,000 - $10,000/month',
-    '$10,000 - $25,000/month',
-    '$25,000+ /month'
+    'Custom Budget'
   ];
 
   return (
@@ -81,7 +105,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <div className="font-satoshi font-semibold text-gray-900">Email Us</div>
-                  <div className="text-gray-600 font-satoshi">hello@digitalmetaworx.com</div>
+                  <div className="text-gray-600 font-satoshi">digitalmetaworx@gmail.com</div>
                 </div>
               </div>
 
@@ -91,7 +115,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <div className="font-satoshi font-semibold text-gray-900">Call Us</div>
-                  <div className="text-gray-600 font-satoshi">+1 (555) 123-4567</div>
+                  <div className="text-gray-600 font-satoshi">+92-(330)-3694739</div>
                 </div>
               </div>
 
@@ -101,7 +125,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <div className="font-satoshi font-semibold text-gray-900">Visit Us</div>
-                  <div className="text-gray-600 font-satoshi">San Francisco, CA</div>
+                  <div className="text-gray-600 font-satoshi">Karachi, Pakistan</div>
                 </div>
               </div>
             </div>
@@ -111,7 +135,7 @@ const Contact = () => {
               <h4 className="font-satoshi font-bold text-gray-900 mb-4">Why Choose Digital Metaworx?</h4>
               <ul className="space-y-3">
                 {[
-                  'Free strategy session & audit',
+                  'Free consultation',
                   'Proven track record of success',
                   'Transparent reporting & communication',
                   'Dedicated account management',

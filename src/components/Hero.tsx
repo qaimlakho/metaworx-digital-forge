@@ -13,7 +13,7 @@ const Hero = () => {
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-5xl md:text-7xl font-bold font-satoshi text-gray-900 mb-6 animate-fade-in">
+          <h1 className="text-5xl md:text-7xl font-bold font-satoshi text-gray-900 mb-6 leading-tight md:leading-snug animate-fade-in">
             Scale Smarter with
             <span className="block text-primary bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
               Digital Metaworx
@@ -44,11 +44,11 @@ const Hero = () => {
           {/* Social Proof */}
           <div className="mt-16 grid grid-cols-3 gap-8 max-w-lg mx-auto text-center animate-fade-in">
             <div>
-              <div className="text-3xl font-bold font-satoshi text-primary">150+</div>
+              <div className="text-3xl font-bold font-satoshi text-primary">170+</div>
               <div className="text-sm text-gray-600 font-satoshi">Brands Scaled</div>
             </div>
             <div>
-              <div className="text-3xl font-bold font-satoshi text-primary">2.5M+</div>
+              <div className="text-3xl font-bold font-satoshi text-primary">20.5M+</div>
               <div className="text-sm text-gray-600 font-satoshi">Revenue Generated</div>
             </div>
             <div>
