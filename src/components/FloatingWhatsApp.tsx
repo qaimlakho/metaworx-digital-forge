@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 const FloatingWhatsApp = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const whatsappNumber = "+1234567890"; // Replace with actual WhatsApp number
+  const whatsappNumber = "+923303694739"; // Replace with actual WhatsApp number
   const message = "Hi! I'm interested in learning more about Digital Metaworx services. Can we schedule a free strategy session?";
 
   const handleWhatsAppClick = () => {
