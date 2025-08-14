@@ -71,7 +71,7 @@ const Navigation = () => {
               <img 
                 src={logo} 
                 alt="Digital Metaworx Logo" 
-                className="h-18 max-h-20 w-auto object-contain" 
+                className="h-48 w-48 object-contain" 
               />
             </Link>
           </div>
